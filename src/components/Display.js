@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Display = () => {
+const Display = ({ input, operand }) => {
   return (
-    <h1>12425</h1>
+    <h1>{input}</h1>
   )
 }
 
