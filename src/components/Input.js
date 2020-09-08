@@ -25,13 +25,13 @@ const Input = ({ input, setInput, operand, setOperand, operation, setOperation }
         computation = prev + current
         break
       case '-':
-        computation = prev - current
+        computation = current - prev
         break
       case '*':
         computation = prev * current
         break
       case '/':
-        computation = prev / current
+        computation = current / prev
         break
       default:
         return
