@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import Input from './components/Input'
-import Display from './components/Display'
+import Calculator from './components/Calculator'
 import './App.css';
 
 function App() {
@@ -9,8 +8,7 @@ function App() {
   const [operation, setOperation] = useState("")
   return (
     <div className="app">
-      <Display input={input} />
-      <Input
+      <Calculator
         input={input}
         setInput={setInput}
         operand={operand}

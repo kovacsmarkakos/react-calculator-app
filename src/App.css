@@ -1,35 +1,79 @@
-html {
+:root {
+  --light: #e8f3ef;
+  --dark: #373f47;
+  --accent: #19d4a2;
+}
+
+*, *::before, *::after {
   box-sizing: border-box;
-  font-size: 16px;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-  margin: 0;
-  padding: 0;
+  font-family: Gotham Rounded, sans-serif;
   font-weight: normal;
 }
 
-ol, ul {
-  list-style: none;
+body {
+  padding: 0;
+  margin: 0;
+  background:  #a0cbbb;
+  font-size: 1.5rem;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+h1 {
+  margin: 0;
+  padding: 0;
 }
 
 .app {
-  width: 500px;
+  width: 0 auto;
+  min-height: 100vh;
 }
 
 .button-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  color: var(--dark);
+}
+
+.button-container > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: var(--dark);
+}
+
+.button-container > button:hover {
+  background-color: var(--light);
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: var(--light);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 0px 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.span-three {
+  grid-column: span 3;
+}
+
+#equal {
+  background-color: var(--accent);
+  color: var(--light);
+}
+
+#equal:hover {
+  background-color: #15a57f;
 }
