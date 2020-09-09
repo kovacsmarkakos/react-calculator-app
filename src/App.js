@@ -6,6 +6,7 @@ function App() {
   const [input, setInput] = useState("")
   const [operand, setOperand] = useState("")
   const [operation, setOperation] = useState("")
+  const [result, setResult] = useState("")
   return (
     <div className="app">
       <Calculator
@@ -14,7 +15,9 @@ function App() {
         operand={operand}
         setOperand={setOperand}
         operation={operation}
-        setOperation={setOperation} />
+        setOperation={setOperation}
+        result={result}
+        setResult={setResult} />
     </div>
   )
 }

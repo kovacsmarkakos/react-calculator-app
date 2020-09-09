@@ -1,8 +1,25 @@
 import React from 'react';
 
-const Calculator = ({ input, setInput, operand, setOperand, operation, setOperation }) => {
+const Calculator = ({
+  input, setInput,
+  operand, setOperand,
+  operation, setOperation,
+  result, setResult }) => {
+
   const inputHandler = (e) => {
+    setResult("")
     setInput(appendNumber(e.target.value))
+  }
+
+  const allClear = () => {
+    setOperation("")
+    setOperand("")
+    setInput("")
+    setResult("")
+  }
+
+  const deleteBtn = () => {
+    setInput(input.toString().slice(0, -1))
   }
 
   const appendNumber = (number) => {
@@ -36,16 +53,19 @@ const Calculator = ({ input, setInput, operand, setOperand, operation, setOperat
       default:
         return
     }
-    console.log(computation)
+    setResult(computation)
+    setOperation("")
+    setOperand("")
+    setInput("")
   }
 
   return (
     <div className="button-container">
-      <div class="output">
-        <h1>{input}</h1>
+      <div className="output">
+        <h1>{result ? result : input}</h1>
       </div>
-      <button >AC</button>
-      <button className="span-two">DEL</button>
+      <button onClick={allClear} >AC</button>
+      <button onClick={deleteBtn} className="span-two">DEL</button>
       <button onClick={operationHandler} value="/" >/</button>
       <button onClick={inputHandler} value="7" >7</button>
       <button onClick={inputHandler} value="8" >8</button>
