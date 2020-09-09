@@ -62,10 +62,10 @@ const Calculator = ({
   return (
     <div className="button-container">
       <div className="output">
-        <h1>{result ? result : input}</h1>
+        <h1>{result ? result : `${operand}${operation}${input}`}</h1>
       </div>
-      <button onClick={allClear} >AC</button>
-      <button onClick={deleteBtn} className="span-two">DEL</button>
+      <button onClick={allClear} className="span-two" >AC</button>
+      <button onClick={deleteBtn} >DEL</button>
       <button onClick={operationHandler} value="/" >/</button>
       <button onClick={inputHandler} value="7" >7</button>
       <button onClick={inputHandler} value="8" >8</button>
