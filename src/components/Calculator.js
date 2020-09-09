@@ -27,9 +27,11 @@ const Calculator = ({
   }
 
   const operationHandler = (e) => {
-    setOperation(e.target.value)
-    setOperand(input)
-    setInput("")
+    if (!operation) {
+      setOperation(e.target.value)
+      setOperand(input)
+      setInput("")
+    }
   }
 
   const calculate = () => {
