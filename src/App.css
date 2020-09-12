@@ -38,6 +38,7 @@ h1 {
 }
 
 .button-container > button {
+  padding: 0px;
   cursor: pointer;
   font-size: 2rem;
   border: none;
